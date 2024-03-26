@@ -1,12 +1,15 @@
 import React from "react";
+import "../../styles/style.css";
 const BackEndSkillList = { id: 1, backend: ["PYTHON"] };
 function BackEndList() {
   return (
-    <div>
+    <div className="backend-content skill-name">
       <h2>Backend</h2>
-      {BackEndSkillList.backend.map((item) => {
-        return <button>{item}</button>;
-      })}
+      <div className="backend-skills domain-skills">
+        {BackEndSkillList.backend.map((item) => {
+          return <button>{item}</button>;
+        })}
+      </div>
     </div>
   );
 }

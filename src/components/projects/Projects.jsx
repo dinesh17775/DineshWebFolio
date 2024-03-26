@@ -1,10 +1,11 @@
 import React from "react";
-
+import "../../styles/style.css";
 function Projects({ projects }) {
   return (
-    <div>
-      <h2>{projects.title}</h2>
-    </div>
+    <article className={`projects-list list-item${projects.id}`}>
+      <img src="" alt="" className="project-img" />
+      <h2 className="project-title">{projects.title}</h2>
+    </article>
   );
 }
 
