@@ -1,10 +1,12 @@
 import React from "react";
 import RootNavLayout from "./layout/RootNavLayout";
+import MenuBar from "./layout/MenuBar";
 import { Header, Others, ProjectsList, SkillList } from "./components";
 import "./styles/style.css";
 import slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Navcontext from "./contexts/Navcontext";
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -20,10 +22,11 @@ const router = createBrowserRouter(
 );
 function App() {
   return (
-    <>
+    <Navcontext>
       <div className="container">
         <div className="header-wrapper">
           <button>contact me</button>
+          <MenuBar></MenuBar>
         </div>
         <div className="content">
           <RouterProvider router={router}></RouterProvider>
@@ -37,7 +40,7 @@ function App() {
           </main>
         </div>
       </div>
-    </>
+    </Navcontext>
   );
 }
 

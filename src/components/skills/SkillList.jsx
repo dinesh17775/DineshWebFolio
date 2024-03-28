@@ -5,11 +5,13 @@ import DataBase from "./DataBase";
 import "../../styles/style.css";
 function SkillList() {
   return (
-    <div className="skills">
-      <FrontEndList></FrontEndList>
-      <BackEndList></BackEndList>
-      <DataBase></DataBase>
-    </div>
+    <>
+      <div className="skills">
+        <FrontEndList></FrontEndList>
+        <BackEndList></BackEndList>
+        <DataBase></DataBase>
+      </div>
+    </>
   );
 }
 

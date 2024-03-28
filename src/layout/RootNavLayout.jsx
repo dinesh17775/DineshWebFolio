@@ -1,11 +1,21 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "../styles/style.css";
+import { MyAppContext } from "../contexts/Navcontext";
 function RootNavLayout() {
+  const { NavOpen, IsNavOpen } = MyAppContext();
   return (
     <>
-      <nav className="nav-bar">
+      <nav className={`nav-bar ${NavOpen ? "showNav" : ""}`}>
         <div className="nav-container">
+          <button
+            className={`close ${NavOpen ? "showClose" : ""}`}
+            onClick={() => {
+              return IsNavOpen(!NavOpen);
+            }}
+          >
+            close
+          </button>
           <ul className="nav-list">
             <li className="nav-item">
               <NavLink to={"/"} className="nav-link">

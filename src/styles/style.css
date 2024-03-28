@@ -42,23 +42,13 @@ body {
   height: 3rem;
   border-radius: 0.8rem;
 }
+.nav-open {
+  display: none;
+}
 .content {
   width: 100%;
   border: 2px solid red;
   height: 93%;
-  display: flex;
-}
-.main-content {
-  width: 80%;
-  border: 2px solid greenyellow;
-  height: 150%;
-  display: flex;
-  flex-direction: column;
-  margin-left: 22.5%;
-  background-color: #14131a;
-  margin-top: 6rem;
-}
-.skill-content {
   display: flex;
 }
 .nav-bar {
@@ -75,6 +65,7 @@ body {
   align-items: center;
   background-color: #1c1b23;
   padding: 20px;
+  z-index: 5;
 }
 .nav-container {
   width: 100%;
@@ -106,6 +97,26 @@ body {
   margin-left: 10px;
   margin-top: 10px;
 }
+.close {
+  margin-left: 50%;
+  width: 10rem;
+  height: 3rem;
+  display: none;
+}
+.main-content {
+  width: 80%;
+  border: 2px solid greenyellow;
+  height: 150%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 22.5%;
+  background-color: #14131a;
+  margin-top: 6rem;
+}
+.skill-content {
+  display: flex;
+}
+
 /*#######################Details##################*/
 
 .details {
@@ -340,6 +351,17 @@ body {
   .nav-bar {
     display: none;
   }
+  .showNav {
+    display: block;
+    width: 30rem;
+    margin-left: 0;
+  }
+  .showClose {
+    display: block;
+  }
+  .nav-open {
+    display: block;
+  }
   .main-content {
     width: 100%;
     margin-left: 0;
@@ -377,6 +399,17 @@ body {
 @media (max-width: 700px) {
   .nav-bar {
     display: none;
+  }
+  .showNav {
+    display: block;
+    width: 30rem;
+    margin-left: 0;
+  }
+  .showClose {
+    display: block;
+  }
+  .nav-open {
+    display: block;
   }
   .details {
     width: 100%;
@@ -431,5 +464,37 @@ body {
   }
   .skills button {
     font-size: 1.2rem;
+  }
+}
+@media (min-width: 100px) and (max-width: 550px) {
+  .nav-bar {
+    display: none;
+  }
+  .showNav {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    margin-left: 0;
+  }
+  .showClose {
+    display: block;
+  }
+  .nav-open {
+    display: block;
+  }
+  .projects-list {
+    width: 100%;
+    height: 18%;
+  }
+  .skill-content {
+    margin-top: 12%;
+  }
+  .details-container {
+    justify-content: center;
+    align-items: center;
+  }
+  .profile-name h2 {
+    font-size: 200%;
+    width: auto;
   }
 }
