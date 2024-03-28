@@ -39,26 +39,58 @@ const projects = [
 
 function ProjectsList() {
   const [slidesToShow, setSlidesToShow] = useState(4);
+
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width:1000px)");
-    console.log(mediaQuery);
-    function handleMediaChange(mediaQuery) {
-      if (mediaQuery.matches) {
-        setSlidesToShow(3);
-      } else {
+    const mediaQueryAbove1000 = window.matchMedia("(min-width: 1000px)");
+    const mediaQueryBetween700And1000 = window.matchMedia(
+      "(min-width: 700px) and (max-width: 1000px)"
+    );
+    const mediaQueryBelow700 = window.matchMedia("(max-width: 700px)");
+
+    function handleMediaChange() {
+      if (mediaQueryAbove1000.matches) {
         setSlidesToShow(4);
+      } else if (mediaQueryBetween700And1000.matches) {
+        setSlidesToShow(3);
+      } else if (mediaQueryBelow700.matches) {
+        setSlidesToShow(0);
       }
     }
-    handleMediaChange(mediaQuery);
-    mediaQuery.addEventListener("change", () => {
-      handleMediaChange(mediaQuery);
-    });
+
+    handleMediaChange();
+
+    const handleAbove1000Change = () => {
+      if (!mediaQueryAbove1000.matches) return;
+      handleMediaChange();
+    };
+
+    const handleBetween700And1000Change = () => {
+      if (!mediaQueryBetween700And1000.matches) return;
+      handleMediaChange();
+    };
+
+    const handleBelow700Change = () => {
+      if (!mediaQueryBelow700.matches) return;
+      handleMediaChange();
+    };
+
+    mediaQueryAbove1000.addEventListener("change", handleAbove1000Change);
+    mediaQueryBetween700And1000.addEventListener(
+      "change",
+      handleBetween700And1000Change
+    );
+    mediaQueryBelow700.addEventListener("change", handleBelow700Change);
+
     return () => {
-      mediaQuery.removeEventListener("change", () => {
-        handleMediaChange(mediaQuery);
-      });
+      mediaQueryAbove1000.removeEventListener("change", handleAbove1000Change);
+      mediaQueryBetween700And1000.removeEventListener(
+        "change",
+        handleBetween700And1000Change
+      );
+      mediaQueryBelow700.removeEventListener("change", handleBelow700Change);
     };
   }, []);
+
   const settings = {
     dots: false,
     infinite: false,
@@ -71,11 +103,15 @@ function ProjectsList() {
     <div className="projects">
       <p>My Projects</p>
       <div className="projects-section">
-        <Slider {...settings} className="my-slider">
-          {projects.map((item) => (
-            <Projects key={item.id} projects={item} />
-          ))}
-        </Slider>
+        {slidesToShow > 0 ? (
+          <Slider {...settings} className="my-slider">
+            {projects.map((item) => (
+              <Projects key={item.id} projects={item} />
+            ))}
+          </Slider>
+        ) : (
+          projects.map((item) => <Projects key={item.id} projects={item} />)
+        )}
       </div>
     </div>
   );

@@ -308,6 +308,7 @@ body {
   border: 2px solid yellow;
   padding: 3% 2% 3% 2%;
   border-radius: 0.7rem;
+  background-color: #1c1b23;
 }
 .projects-head {
   margin-bottom: 2rem;
@@ -335,7 +336,7 @@ body {
   font-size: 1.6rem;
 }
 /*##########################mediaquieries##################*/
-@media (max-width: 1000px) {
+@media (min-width: 700px) and (max-width: 1000px) {
   .nav-bar {
     display: none;
   }
@@ -371,5 +372,64 @@ body {
     height: 30rem;
     margin-top: 18%;
     margin-left: 2%;
+  }
+}
+@media (max-width: 700px) {
+  .nav-bar {
+    display: none;
+  }
+  .details {
+    width: 100%;
+    padding: 0;
+  }
+  .details-container {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  .details .follow-btn {
+    display: none;
+  }
+  .main-content {
+    width: 100%;
+    height: 100%;
+    margin-left: 0;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .projects {
+    display: block;
+    height: auto;
+  }
+  .projects-list {
+    width: 100%;
+    height: 50rem;
+    margin: 5% 2%;
+  }
+  .skill-content {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    margin: 0;
+    margin-top: 11%;
+    padding: 5%;
+  }
+  .skills {
+    width: 100%;
+    flex-direction: column;
+    height: auto;
+  }
+  .skill-name {
+    width: 90%;
+    margin: 3%;
+  }
+  .others {
+    width: 100%;
+    height: auto;
+    margin-top: 4%;
+  }
+  .skills button {
+    font-size: 1.2rem;
   }
 }
