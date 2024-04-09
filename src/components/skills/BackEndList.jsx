@@ -7,7 +7,13 @@ function BackEndList() {
       <h2>Backend</h2>
       <div className="backend-skills domain-skills">
         {BackEndSkillList.backend.map((item) => {
-          return <button>{item}</button>;
+          return (
+            <button
+              className={`${item === "PYTHON" ? "greenBorder" : "blueBorder"}`}
+            >
+              {item}
+            </button>
+          );
         })}
       </div>
     </div>

@@ -101,7 +101,7 @@ function ProjectsList() {
 
   return (
     <div className="projects">
-      <p>My Projects</p>
+      <p>Projects</p>
       <div className="projects-section">
         {slidesToShow > 0 ? (
           <Slider {...settings} className="my-slider">

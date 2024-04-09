@@ -7,6 +7,9 @@ import slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Navcontext from "./contexts/Navcontext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -25,7 +28,13 @@ function App() {
     <Navcontext>
       <div className="container">
         <div className="header-wrapper">
-          <button>contact me</button>
+          <a
+            href="mailto:nandyaladinesh393@gmail.com"
+            target="_blank"
+            className="contact"
+          >
+            <p>contact me</p> <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>
+          </a>
           <MenuBar></MenuBar>
         </div>
         <div className="content">

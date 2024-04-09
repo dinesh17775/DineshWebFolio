@@ -10,7 +10,15 @@ function FrontEndList() {
       <h2>Frontend</h2>
       <div className="frontend-skills domain-skills">
         {FrontEndSkillList.frontend.map((item) => {
-          return <button>{item}</button>;
+          return (
+            <button
+              className={`${
+                item === "Javascript" ? "yellowBorder" : "blueBorder"
+              }`}
+            >
+              {item}
+            </button>
+          );
         })}
       </div>
     </div>

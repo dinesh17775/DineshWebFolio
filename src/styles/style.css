@@ -6,15 +6,37 @@
   font-size: 10px;
   font-family: "Poppins", sans-serif;
 }
+/*html::-webkit-scrollbar-button {
+  display: none;
+}*/
 body {
   overflow-x: hidden;
+}
+.nav-bar::-webkit-scrollbar-track {
+  background-color: #1c1b23;
+}
+.nav-bar::-webkit-scrollbar {
+  width: 0.7vw;
+}
+.nav-bar::-webkit-scrollbar-thumb {
+  background-color: #14131a;
+  border-radius: 4px;
+}
+::-webkit-scrollbar {
+  width: 0.3vw;
+}
+::-webkit-scrollbar-track {
+  background-color: #1c1b23;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #8a898d;
+  border-radius: 4px;
 }
 #root {
   width: 100vw;
   height: 100vh;
   background-color: #14131a;
   overflow-x: hidden;
-  border: 2px solid red;
 }
 .container {
   width: 100%;
@@ -32,24 +54,39 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  background-color: #1c1b23;
+  background-color: #14131a;
   z-index: 2;
-  /*border: 2px solid red;*/
+  /* */
 }
-.header-wrapper button {
-  margin-right: 5rem;
-  width: 10rem;
-  height: 3rem;
+.header-wrapper .contact {
+  text-decoration: none;
+  margin-right: 1.6rem;
+  width: auto;
+  height: auto;
+  padding: 1rem 2rem;
   border-radius: 0.8rem;
+  background-color: #207448;
+  border: 0;
+  color: #8a898d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 .nav-open {
   display: none;
 }
 .content {
   width: 100%;
-  border: 2px solid red;
+
   height: 93%;
   display: flex;
+}
+.menu_bar {
+  font-size: 2rem;
+  margin-right: 2rem;
+  color: #8a898d;
+  display: none;
 }
 .nav-bar {
   position: fixed;
@@ -57,7 +94,7 @@ body {
   left: 0;
   width: 20%;
   margin-left: 2rem;
-  border: 2px solid green;
+
   height: 90vh;
   overflow-y: scroll;
   display: flex;
@@ -70,12 +107,14 @@ body {
 .nav-container {
   width: 100%;
   height: 100%;
-  border: 2px solid green;
 }
 .nav-link {
   font-size: 1.6rem;
   text-decoration: none;
   color: #8b8a91;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
 }
 .nav-bar p {
   font-size: 1.6rem;
@@ -97,21 +136,31 @@ body {
   margin-left: 10px;
   margin-top: 10px;
 }
+.nav-icon {
+  font-size: 1.6rem;
+}
 .close {
-  margin-left: 50%;
-  width: 10rem;
+  margin-left: 0%;
+
+  width: 100%;
   height: 3rem;
   display: none;
+  color: #8a898d;
 }
 .main-content {
   width: 80%;
-  border: 2px solid greenyellow;
   height: 150%;
   display: flex;
   flex-direction: column;
   margin-left: 22.5%;
   background-color: #14131a;
   margin-top: 6rem;
+}
+.projects p {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-top: 1rem;
 }
 .skill-content {
   display: flex;
@@ -120,40 +169,78 @@ body {
 /*#######################Details##################*/
 
 .details {
+  background-image: url("../images/bg10.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   width: 96%;
   height: 18rem;
-  border: 2px solid red;
+
   padding-left: 2em;
 }
 .details-container {
   width: 100%;
-  border: 2px solid red;
+
   height: 18rem;
   display: flex;
   align-items: center;
 }
 .profile-pic {
-  width: 12rem;
-  height: 12rem;
+  width: auto;
+  height: 60%;
   border-radius: 50%;
-  border: 2px solid red;
+
+  background-color: #fa9528;
+  overflow: hidden;
+}
+.display-pic {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.detailsWrapper {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
 }
 .profile-name h2 {
   width: 28rem;
-  border: 2px solid red;
+
   font-size: 3rem;
   color: #fff;
   margin-left: 3rem;
 }
 .follow-btn {
-  width: 50%;
+  width: auto;
   height: 5rem;
-  margin-left: 10%;
-  padding-right: 5rem;
-  border: 2px solid red;
+  margin-left: 0;
+  margin-right: 3rem;
+  border: 1px solid #dd2a7b /*rgba(79, 70, 229, 0.6)*/;
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  border-radius: 0.8rem;
+}
+.social-Insta-btn {
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem 3rem;
+  display: flex;
+  align-items: center;
+  background-color: #1c1b23;
+  color: #8b8a91;
+  font-size: 1.2rem;
+  border-radius: inherit;
+  border: 0;
+}
+.InstaIcon {
+  width: auto;
+  height: 90%;
+  margin-right: 0.5rem;
+}
+.social-Insta-btn:hover {
+  cursor: pointer;
 }
 /*#####################projects######################*/
 .projects-list {
@@ -170,7 +257,7 @@ body {
 }
 .slick-slide > div {
   width: 93%;
-  border: 2px solid green;
+
   height: 100%;
   border-radius: 0.8rem;
 }
@@ -179,13 +266,13 @@ body {
   height: 30rem;
   display: flex;
   flex-direction: column;
-  border: 2px solid green;
+
   margin-left: 3%;
 }
 .projects-section {
   width: 100%;
   height: 90%;
-  border: 2px solid red;
+
   margin-top: 3em;
 }
 .slick-slider,
@@ -206,7 +293,7 @@ body {
 .project-img {
   width: 100%;
   height: 60%;
-  border: 2px solid red;
+
   border-top-left-radius: 0.7rem;
   border-top-right-radius: 0.7em;
 }
@@ -266,7 +353,6 @@ body {
 }
 /*########################skill content################*/
 .skill-content {
-  border: 2px solid red;
   width: 90%;
   height: 50rem;
   margin-left: 5%;
@@ -276,16 +362,15 @@ body {
 .skills {
   display: flex;
   width: 70%;
-  height: 50%;
+  height: auto;
   margin-top: -5%;
-  border: 2px solid red;
 }
 .skill-name {
   width: 25%;
-  height: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
-  border: 2px solid green;
+
   margin-left: 4%;
   border-radius: 0.6rem;
   background-color: #1c1b23;
@@ -312,11 +397,22 @@ body {
 .frontend-skill {
   flex-wrap: wrap;
 }
+.yellowBorder {
+  border: 1px solid rgba(255, 235, 59, 0.6); /* Yellow color with 60% opacity */
+}
+.blueBorder {
+  border: 1px solid rgba(59, 130, 246, 0.6); /* Blue color with 60% opacity */
+}
+.greenBorder {
+  border: 1px solid rgba(16, 185, 129, 0.6); /* Green color with 60% opacity */
+}
+.orangeBorder {
+  border: 1px solid rgba(255, 165, 0, 0.6); /* Orange color with 60% opacity */
+}
 .others {
   color: #fff;
   width: 25%;
   height: 100%;
-  border: 2px solid yellow;
   padding: 3% 2% 3% 2%;
   border-radius: 0.7rem;
   background-color: #1c1b23;
@@ -327,10 +423,13 @@ body {
   color: #ffffffd4;
 }
 .other-project {
-  width: 60%;
+  width: auto;
   height: auto;
-  border: 2px solid red;
+  justify-content: space-between;
+
   margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
 }
 .other-project-item {
   list-style-type: none;
@@ -343,6 +442,10 @@ body {
   font-size: 1.6rem;
   color: #8b8a91;
 }
+.othersIcons {
+  font-size: 1.6rem;
+  color: #8b8a91;
+}
 .languages {
   font-size: 1.6rem;
 }
@@ -351,13 +454,17 @@ body {
   .nav-bar {
     display: none;
   }
+  .menu_bar {
+    display: block;
+  }
   .showNav {
     display: block;
     width: 30rem;
     margin-left: 0;
   }
-  .showClose {
-    display: block;
+  .close {
+    display: flex;
+    justify-content: end;
   }
   .nav-open {
     display: block;
@@ -370,10 +477,21 @@ body {
     width: 100%;
   }
   .projects {
-    margin-left: 4.5rem;
+    margin: 0 auto;
   }
   .slick-next {
     left: 98.5%;
+  }
+  .follow-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .follow-btn p {
+    display: none;
+  }
+  .social-Insta-btn {
+    padding: 0.5rem 0rem 0.5rem 0.5rem;
   }
   .skill-content {
     flex-direction: column;
@@ -392,11 +510,13 @@ body {
   .others {
     width: 45%;
     height: 30rem;
-    margin-top: 18%;
     margin-left: 2%;
   }
 }
 @media (max-width: 700px) {
+  .menu_bar {
+    display: block;
+  }
   .nav-bar {
     display: none;
   }
@@ -405,8 +525,9 @@ body {
     width: 30rem;
     margin-left: 0;
   }
-  .showClose {
-    display: block;
+  .close {
+    display: flex;
+    justify-content: end;
   }
   .nav-open {
     display: block;
@@ -414,11 +535,12 @@ body {
   .details {
     width: 100%;
     padding: 0;
+    display: flex;
+    justify-content: center;
   }
   .details-container {
-    width: 100%;
-    align-items: center;
-    justify-content: center;
+    width: auto;
+    height: 100%;
   }
   .details .follow-btn {
     display: none;
@@ -434,11 +556,24 @@ body {
   .projects {
     display: block;
     height: auto;
+    margin: 0 auto;
+  }
+  .projects-section {
+    height: auto;
+    display: flex;
+    flex-direction: column;
   }
   .projects-list {
     width: 100%;
-    height: 50rem;
-    margin: 5% 2%;
+    height: 35rem;
+    margin-bottom: 1rem;
+  }
+  .project-img {
+    width: 100%;
+    height: 60%;
+  }
+  .project-title {
+    height: 40%;
   }
   .skill-content {
     width: 100%;
@@ -466,7 +601,10 @@ body {
     font-size: 1.2rem;
   }
 }
-@media (min-width: 100px) and (max-width: 550px) {
+@media (min-width: 200px) and (max-width: 550px) {
+  .menu_bar {
+    display: block;
+  }
   .nav-bar {
     display: none;
   }
@@ -476,8 +614,9 @@ body {
     height: 100vh;
     margin-left: 0;
   }
-  .showClose {
-    display: block;
+  .close {
+    display: flex;
+    justify-content: end;
   }
   .nav-open {
     display: block;
@@ -490,11 +629,44 @@ body {
     margin-top: 12%;
   }
   .details-container {
+    width: auto;
     justify-content: center;
     align-items: center;
   }
+  .profile-pic {
+    width: auto;
+    height: 60%;
+  }
   .profile-name h2 {
     font-size: 200%;
-    width: auto;
+    width: 100%;
+    height: auto;
+    word-wrap: break-word;
+    margin-left: 5%;
   }
+  .projects {
+    height: auto;
+  }
+  .projects-section {
+    height: auto;
+  }
+  .projects-list {
+    height: auto;
+    margin-bottom: 1rem;
+  }
+  .project-img {
+    height: 20rem;
+  }
+  .project-title {
+    height: 10rem;
+  }
+  /*.projects-section {
+    height: auto;
+  }
+  .projects-list {
+    margin-bottom: 1rem;
+  }
+  .project-img img {
+    height: 70%;
+  }*/
 }

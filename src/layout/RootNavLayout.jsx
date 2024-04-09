@@ -1,78 +1,112 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import "../styles/style.css";
 import { MyAppContext } from "../contexts/Navcontext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faHome,
+  faFire,
+  faCode,
+  faFileAlt,
+  faXmark,
+} from "@fortawesome/free-solid-svg-icons";
+import {
+  faInstagram,
+  faGithub,
+  faLinkedin,
+  faYoutube,
+  faStackOverflow,
+} from "@fortawesome/free-brands-svg-icons";
+
+const NavItems = [
+  { id: 1, title: "Home", link: "/", icon: faHome },
+  { id: 2, title: "Trending", link: "/", icon: faFire },
+  {
+    id: 3,
+    title: "Snippets",
+    link: "https://github.com/dinesh17775",
+    icon: faCode,
+  },
+  {
+    id: 4,
+    title: "Resume",
+    link: "https://drive.google.com/file/d/1vvamVIGMQhES1DmkOAh86dKQL4KcKuE7/view?usp=drive_link",
+    icon: faFileAlt,
+  },
+];
+
+const socialLinks = [
+  {
+    id: 1,
+    title: "Instagram",
+    link: "https://www.instagram.com/imdinesh_yadav/",
+    icon: faInstagram,
+  },
+  {
+    id: 2,
+    title: "Github",
+    link: "https://github.com/dinesh17775",
+    icon: faGithub,
+  },
+  {
+    id: 3,
+    title: "Linkedin",
+    link: "https://www.linkedin.com/in/nandyala-dinesh-8679651a0/",
+    icon: faLinkedin,
+  },
+  {
+    id: 4,
+    title: "Youtube",
+    link: "https://www.youtube.com/",
+    icon: faYoutube,
+  },
+  {
+    id: 5,
+    title: "Stack Overflow",
+    link: "https://stackoverflow.com/",
+    icon: faStackOverflow,
+  },
+];
+
 function RootNavLayout() {
   const { NavOpen, IsNavOpen } = MyAppContext();
+
   return (
     <>
       <nav className={`nav-bar ${NavOpen ? "showNav" : ""}`}>
         <div className="nav-container">
-          <button
-            className={`close ${NavOpen ? "showClose" : ""}`}
-            onClick={() => {
-              return IsNavOpen(!NavOpen);
-            }}
-          >
-            close
-          </button>
+          <div className="close">
+            <FontAwesomeIcon
+              icon={faXmark}
+              className={` ${NavOpen ? "showClose" : ""}`}
+              onClick={() => IsNavOpen(!NavOpen)}
+              size="2xl"
+            ></FontAwesomeIcon>
+          </div>
           <ul className="nav-list">
-            <li className="nav-item">
-              <NavLink to={"/"} className="nav-link">
-                Home
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink to={"/"} className="nav-link">
-                Trending
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink to={"/"} className="nav-link">
-                Snippets
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink to={"/"} className="nav-link">
-                Resume
-              </NavLink>
-            </li>
+            {NavItems.map((item) => (
+              <li className="nav-item" key={item.id}>
+                <a href={item.link} className={"nav-link"} target="_blank">
+                  <FontAwesomeIcon icon={item.icon} className="nav-icon" />
+                  {item.title}
+                </a>
+              </li>
+            ))}
           </ul>
           <p className="online-content">Socials</p>
           <ul className="nav-list">
-            <li className="nav-item">
-              <NavLink
-                to={"https://www.instagram.com/imdinesh_yadav/"}
-                target="_blank"
-                className="nav-link"
-              >
-                Instagram
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                to={"https://github.com/dinesh17775"}
-                target="_blank"
-                className="nav-link"
-              >
-                Github
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink to={"/"} className="nav-link">
-                Linkedin
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink to={"/"} className="nav-link">
-                Youtube
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink to={"/"} className="nav-link">
-                stack overflow
-              </NavLink>
-            </li>
+            {socialLinks.map((item) => (
+              <li className="nav-item" key={item.id}>
+                <a
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="nav-link"
+                >
+                  <FontAwesomeIcon icon={item.icon} className="nav-icon" />
+                  {item.title}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       </nav>

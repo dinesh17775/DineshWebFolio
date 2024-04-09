@@ -7,7 +7,13 @@ function DataBase() {
       <h2>Database</h2>
       <div className="database-skill domain-skill">
         {DataBaseSkillList.database.map((item) => {
-          return <button>{item}</button>;
+          return (
+            <button
+              className={`${item === "My SQL" ? "orangeBorder" : "blueBorder"}`}
+            >
+              {item}
+            </button>
+          );
         })}
       </div>
     </div>

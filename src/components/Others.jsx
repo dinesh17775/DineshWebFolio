@@ -1,23 +1,25 @@
 import React from "react";
 import "../styles/style.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 const otherProjects = [
   {
     id: 1,
     title: "To-Do-List",
     languages: "React JS, Javascript, CSS",
-    projectLink: "https://ez-snippet.vercel.app/",
+    projectLink: "https://github.com/dinesh17775/PriorityPilot.git",
   },
   {
     id: 2,
     title: "Movie finder",
     languages: "React JS, Javascript, CSS",
-    projectLink: "https://ez-snippet.vercel.app/",
+    projectLink: "https://github.com/dinesh17775?tab=repositories",
   },
   {
     id: 3,
     title: "Color changer",
     languages: "React JS, Javascript, CSS",
-    projectLink: "https://ez-snippet.vercel.app/",
+    projectLink: "https://github.com/dinesh17775/ColorCanvas.git",
   },
 ];
 
@@ -40,6 +42,12 @@ function Others() {
             <h2 className="other-title">{item.title}</h2>
             <p className="langauges">{item.languages}</p>
           </li>
+          <div>
+            <FontAwesomeIcon
+              icon={faAngleRight}
+              className="othersIcons"
+            ></FontAwesomeIcon>
+          </div>
         </div>
       ))}
     </div>
