@@ -7,33 +7,38 @@ import learn from "../../images/learning.jpeg";
 import music from "../../images/music.jpeg";
 import shopping from "../../images/shopping.jpeg";
 import weather from "../../images/weather.jpeg";
-import fit from "../../images/fit.jpg";
+import calen from "../../images/calen.jpeg";
 
 const projects = [
   {
     id: 1,
-    title: "Learning platform",
-    img: learn,
+    title: "Calendly clone",
+    img: calen,
+    link: "https://github.com/dinesh17775/Calendly.git",
   },
   {
     id: 2,
     title: "Music App",
     img: music,
+    link: "https://github.com/dinesh17775/tunetap.git",
   },
   {
     id: 3,
     title: "Shopping Cart",
     img: shopping,
+    link: "https://github.com/dinesh17775/EasyShopHub.git",
   },
   {
     id: 4,
     title: "Weather App",
     img: weather,
+    link: "https://github.com/dinesh17775/Climatify.git",
   },
   {
     id: 5,
-    title: "Fitness App",
-    img: fit,
+    title: "Learning platform",
+    img: learn,
+    link: "https://github.com/dinesh17775/vidyalay.git",
   },
 ];
 
