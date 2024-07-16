@@ -29,7 +29,7 @@ const NavItems = [
   {
     id: 4,
     title: "Resume",
-    link: "https://drive.google.com/file/d/1vvamVIGMQhES1DmkOAh86dKQL4KcKuE7/view?usp=drive_link",
+    link: "https://drive.google.com/file/d/1v56CvFaJjUtxGwp6BO4zNBrMubtMQ5I2/view?usp=sharing",
     icon: faFileAlt,
   },
 ];
